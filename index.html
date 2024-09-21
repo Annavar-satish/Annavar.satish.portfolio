@@ -5,70 +5,183 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1">
-    <title>Annavar.Satish ---> Devops Engineer <--- Portfolio </title>
+    <title>Annavar.Satish ---> DevOps Engineer <--- Portfolio</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap" rel="stylesheet">
-            <style>
-                * {
-                    margin: 0;
-                    padding: 0;
-                }
 
-                body {
-                    background-color: rgb(14, 13, 13);
-                    color: white;
-                    font-family: 'Poppins', sans-serif;
-                }
-                nav{
-                    display: flex;
-                    justify-content: space-around;
-                    align-items: center;
-                    height: 90px;
-                    background-color: rgb(5, 5, 5);
-                }
-                nav ul{
-                    display: flex;
-                    justify-content: center;
-                }
-                nav ul li{
-                    list-style: none;
-                    margin: 0 23px;
-                }
-                .left{
-                    font-size: 1.75rem;
-                }
-                .tag{
-                    display: flex;
-                    justify-content: center;
-                    margin: 372px;
-                }
-            </style>
+    <!-- Custom CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(14, 13, 13);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+            background-color: rgb(5, 5, 5);
+            padding: 0 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .left {
+            font-size: 1.75rem;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .full-page {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1, p {
+            margin-bottom: 20px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgb(5, 5, 5);
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Additional styling for sections */
+        section#home {
+            background-color: rgb(20, 20, 20);
+        }
+
+        section#about {
+            background-color: rgb(30, 30, 30);
+        }
+
+        section#services {
+            background-color: rgb(40, 40, 40);
+        }
+
+        section#projects {
+            background-color: rgb(50, 50, 50);
+        }
+
+        section#contact {
+            background-color: rgb(60, 60, 60);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            nav .left {
+                font-size: 1.25rem;
+            }
+
+            .full-page h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <head>
-        <nav>
-            <div class="left">Annavar's Portfolio</div>
-            <div class="right">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Services</li>
-                    <li>projects</li>
-                    <li>Contact Me</li>
-                </ul>
-            </div>
-        </nav>
-    </head>
-    <main>
-        <div class="tag">
-            <h1>
-                # UNDER CONSTRUCTION
-            </h1>
+    <nav>
+        <div class="left">Annavar's Portfolio</div>
+        <div class="right">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
         </div>
+    </nav>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="full-page">
+            <h1>Welcome to Annavar's Portfolio</h1>
+            <p>DevOps Engineer | Mastering Scalable Infrastructure</p>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="full-page">
+            <h1>About Me</h1>
+            <p>I am Annavar Satish, a passionate DevOps Engineer specializing in scalable and reliable infrastructure.</p>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="full-page">
+            <h1>Services</h1>
+            <ul>
+                <li>CI/CD Pipeline Setup</li>
+                <li>Cloud Infrastructure Management</li>
+                <li>Container Orchestration (Kubernetes)</li>
+                <li>Monitoring and Alerting Systems</li>
+            </ul>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="full-page">
+            <h1>Projects</h1>
+            <p>Here you can view some of the projects I've worked on.</p>
+            <a href="https://github.com/Annavar-satish" target="_blank">View My GitHub</a>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="full-page">
+            <h1>Contact Me</h1>
+            <p>Email: annavarsatish10@gmail.com</p>
+            <p><a href="https://www.linkedin.com/in/annavar-satish-5b1a64236" target="_blank">LinkedIn</a></p>
+            <p><a href="https://github.com/Annavar-satish" target="_blank">GitHub</a></p>
+        </section>
     </main>
+
+    <footer>
+        <p>&copy; 2024 Annavar Satish</p>
+    </footer>
+
 </body>
 
 </html>
