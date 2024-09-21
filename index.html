@@ -25,6 +25,7 @@
             color: white;
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
+            margin: 0;
         }
 
         nav {
@@ -65,10 +66,12 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            padding: 20px;
         }
 
         h1, p {
             margin-bottom: 20px;
+            text-align: center;
         }
 
         section {
@@ -106,10 +109,14 @@
             background-color: rgb(60, 60, 60);
         }
 
-        /* Responsive Design */
+        /* Mobile styles */
         @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
             nav ul li {
-                margin: 0 10px;
+                margin: 10px 0;
             }
 
             nav .left {
@@ -117,7 +124,43 @@
             }
 
             .full-page h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
+            }
+
+            .full-page p {
+                font-size: 1rem;
+            }
+
+            .full-page {
+                height: auto;
+                padding: 40px 20px;
+            }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            nav ul li {
+                margin: 5px 0;
+            }
+
+            nav ul li a {
+                font-size: 0.9rem;
+            }
+
+            nav .left {
+                font-size: 1rem;
+            }
+
+            .full-page h1 {
+                font-size: 1.5rem;
+            }
+
+            .full-page p {
+                font-size: 0.85rem;
+            }
+
+            section {
+                padding: 15px;
             }
         }
     </style>
