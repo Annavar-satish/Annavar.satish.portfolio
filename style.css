@@ -1,0 +1,72 @@
+/* Custom CSS for animations and components that are tricky with Tailwind alone */
+
+/* Global Styles & Animations */
+@keyframes fade-in-down {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-down {
+    animation: fade-in-down 0.6s ease-out forwards;
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+}
+
+/* Base Styles for section titles */
+.section-title {
+    @apply text-3xl font-bold text-white mb-8 text-center md:text-left relative pl-4;
+}
+
+.section-title::before {
+    content: '';
+    @apply absolute left-0 top-0 bottom-0 w-1 bg-teal-500 rounded-full;
+}
+
+/* Project Card Styling */
+.project-card {
+    @apply bg-gray-800 p-6 rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2;
+    background: linear-gradient(145deg, #2d3748, #1a202c);
+}
+
+/* Experience Timeline */
+.experience-item {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.experience-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Contact Form Input Styling */
+.form-input {
+    @apply w-full bg-gray-800 border-2 border-gray-700 rounded-lg py-3 px-4 text-gray-200 focus:outline-none focus:border-teal-500 transition-colors;
+}
+
+/* Social Media Icon Styling */
+.social-icon {
+    @apply text-gray-400 hover:text-teal-400 transition-transform duration-300 hover:scale-110;
+}
