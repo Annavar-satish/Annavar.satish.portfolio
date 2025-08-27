@@ -1,5 +1,11 @@
 /* Custom CSS for animations and components that are tricky with Tailwind alone */
 
+body {
+    background-color: #0f172a; /* bg-slate-900 */
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+    background-size: 2rem 2rem;
+}
+
 /* Global Styles & Animations */
 @keyframes fade-in-down {
     from {
@@ -34,26 +40,29 @@
 }
 
 /* Base Styles for section titles */
-.section-title {
-    @apply text-3xl font-bold text-white mb-8 text-center md:text-left relative pl-4;
-}
-
 .section-title::before {
     content: '';
-    @apply absolute left-0 top-0 bottom-0 w-1 bg-teal-500 rounded-full;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0.25rem; /* w-1 */
+    background-color: #818cf8; /* bg-indigo-400 */
+    border-radius: 9999px; /* rounded-full */
 }
 
 /* Project Card Styling */
 .project-card {
-    @apply bg-gray-800 p-6 rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2;
-    background: linear-gradient(145deg, #2d3748, #1a202c);
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    border-top: 1px solid #4f46e5;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 /* Experience Timeline */
 .experience-item {
     opacity: 0;
     transform: translateX(-30px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .experience-item.visible {
@@ -61,12 +70,13 @@
     transform: translateX(0);
 }
 
-/* Contact Form Input Styling */
-.form-input {
-    @apply w-full bg-gray-800 border-2 border-gray-700 rounded-lg py-3 px-4 text-gray-200 focus:outline-none focus:border-teal-500 transition-colors;
-}
-
 /* Social Media Icon Styling */
 .social-icon {
-    @apply text-gray-400 hover:text-teal-400 transition-transform duration-300 hover:scale-110;
+    color: #94a3b8; /* text-slate-400 */
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #818cf8; /* hover:text-indigo-400 */
+    transform: scale(1.1);
 }
