@@ -1,6 +1,6 @@
-/* --- GOD MODE STYLES --- */
+/* --- GOD MODE 2.0 STYLES (CORRECTED) --- */
 
-/* CSS Variables for easy theme management */
+/* CSS Variables */
 :root {
     --bg-color: #0f172a;
     --primary-color: #6366f1;
@@ -8,9 +8,7 @@
     --secondary-color: #818cf8;
     /* Indigo 400 */
     --card-bg-color: rgba(30, 41, 59, 0.5);
-    /* Slate 800 with transparency */
     --border-color: rgba(71, 85, 105, 0.3);
-    /* Slate 600 with transparency */
 }
 
 /* Animated Gradient Background */
@@ -40,75 +38,142 @@
     }
 }
 
-/* General Styling */
-.section-title {
-    @apply text-4xl font-bold text-center mb-12 text-white relative;
-}
-
+/* Section Titles Underlines */
 .section-title::after {
     content: '';
-    @apply block w-16 h-1 bg-indigo-500 mx-auto mt-4 rounded-full;
+    display: block;
+    width: 80px;
+    /* w-20 */
+    height: 4px;
+    /* h-1 */
+    background-color: var(--primary-color);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    /* mt-4 */
+    border-radius: 9999px;
+    /* rounded-full */
 }
 
-/* Navigation Link Styling */
+.section-title-left::after {
+    content: '';
+    display: block;
+    width: 80px;
+    /* w-20 */
+    height: 4px;
+    /* h-1 */
+    background-color: var(--primary-color);
+    margin-right: auto;
+    margin-top: 1rem;
+    /* mt-4 */
+    border-radius: 9999px;
+    /* rounded-full */
+}
+
+/* Navigation Link Underline Effect */
 .nav-link {
-    @apply relative text-slate-300 font-semibold transition-colors duration-300;
+    position: relative;
+    color: #cbd5e1;
+    /* text-slate-300 */
+    font-weight: 600;
+    /* font-semibold */
+    transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-    @apply text-white;
+    color: white;
 }
 
 .nav-link::after {
     content: '';
-    @apply absolute left-0 -bottom-1 w-0 h-0.5 bg-indigo-400 transition-all duration-300;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    /* -bottom-1 */
+    width: 0;
+    height: 2px;
+    /* h-0.5 */
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
 }
 
 .nav-link:hover::after {
-    @apply w-full;
-}
-
-/* Button Styles */
-.btn-primary {
-    @apply bg-indigo-500 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg shadow-indigo-500/20;
-}
-
-.btn-primary:hover {
-    @apply bg-indigo-600 scale-105 transform shadow-xl shadow-indigo-500/40;
-}
-
-.btn-secondary {
-    @apply bg-transparent border-2 border-indigo-500 text-indigo-400 font-bold py-3 px-8 rounded-lg transition-all duration-300;
-}
-
-.btn-secondary:hover {
-    @apply bg-indigo-500 text-white;
+    width: 100%;
 }
 
 /* Hero Section - Typing Effect Cursor */
 .typed-cursor {
-    @apply text-slate-400 text-4xl md:text-6xl;
+    color: var(--secondary-color);
+    font-size: 2.25rem;
+    /* text-4xl */
 }
 
-/* Skill Card - Glassmorphism & Glow */
-.skill-card {
-    background-color: var(--card-bg-color);
-    @apply p-4 rounded-xl flex flex-col items-center justify-center gap-2 text-slate-300 font-semibold text-sm;
-    border: 1px solid var(--border-color);
-    backdrop-filter: blur(10px);
+@media (min-width: 768px) {
+    .typed-cursor {
+        font-size: 3.75rem;
+    }
+
+    /* md:text-6xl */
+}
+
+
+/* About Me Section - Image Container */
+.about-image-container {
+    position: relative;
+    padding: 1rem;
+    /* p-4 */
+}
+
+.about-image-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(99, 102, 241, 0.1);
+    /* bg-indigo-500/10 */
+    border-radius: 0.5rem;
+    /* rounded-lg */
+    transform: rotate(-3deg);
+    transition: transform 0.3s ease;
+}
+
+.about-image-container:hover::before {
+    transform: rotate(0deg);
+}
+
+/* Skill Pills */
+.skill-pill {
+    background-color: #1e293b;
+    /* bg-slate-800 */
+    color: #cbd5e1;
+    /* text-slate-300 */
+    font-size: 0.875rem;
+    /* text-sm */
+    font-weight: 600;
+    /* font-semibold */
+    padding: 0.5rem 1rem;
+    /* px-4 py-2 */
+    border-radius: 9999px;
+    /* rounded-full */
+    border: 1px solid #334155;
+    /* border-slate-700 */
     transition: all 0.3s ease;
 }
 
-.skill-card:hover {
-    transform: translateY(-8px);
-    background-color: rgba(30, 41, 59, 0.8);
-    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+.skill-pill:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
 }
 
-/* Project Card - Glassmorphism & Glow */
+/* Project Card */
 .project-card {
     background-color: var(--card-bg-color);
-    @apply p-6 rounded-2xl;
+    padding: 2rem;
+    /* p-8 */
+    border-radius: 1rem;
+    /* rounded-2xl */
+    display: flex;
+    flex-direction: column;
     border: 1px solid var(--border-color);
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
@@ -116,37 +181,71 @@
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.3);
     border-color: rgba(99, 102, 241, 0.5);
 }
 
-.card-title {
-    @apply text-2xl font-bold text-white mb-2;
-}
-
-.card-description {
-    @apply text-slate-400 mb-4;
-}
-
-.card-tags {
-    @apply flex flex-wrap gap-2 mt-auto pt-4;
-}
-
 .tag {
-    @apply bg-slate-700 text-indigo-300 text-xs font-semibold px-3 py-1 rounded-full;
+    background-color: #334155;
+    /* bg-slate-700 */
+    color: #a5b4fc;
+    /* text-indigo-300 */
+    font-size: 0.75rem;
+    /* text-xs */
+    font-weight: 600;
+    /* font-semibold */
+    padding: 0.25rem 0.75rem;
+    /* px-3 py-1 */
+    border-radius: 9999px;
+    /* rounded-full */
 }
 
 /* Experience Timeline */
+.experience-item {
+    position: relative;
+}
+
 .experience-item::before {
     content: '';
-    @apply absolute -left-[2.8rem] mt-1.5 w-6 h-6 bg-slate-900 rounded-full border-4 border-indigo-500;
+    position: absolute;
+    left: -54px;
+    /* Adjusted for pl-12 and border width */
+    top: 8px;
+    /* mt-2 */
+    width: 1.5rem;
+    /* w-6 */
+    height: 1.5rem;
+    /* h-6 */
+    background-color: var(--bg-color);
+    border-radius: 9999px;
+    /* rounded-full */
+    border-width: 4px;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
 }
 
 /* Social Icons */
 .social-icon {
-    @apply w-12 h-12 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center text-xl transition-all duration-300;
+    width: 3rem;
+    /* w-12 */
+    height: 3rem;
+    /* h-12 */
+    border-radius: 9999px;
+    /* rounded-full */
+    background-color: #1e293b;
+    /* bg-slate-800 */
+    color: #94a3b8;
+    /* text-slate-400 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    /* text-xl */
+    transition: all 0.3s ease;
 }
 
 .social-icon:hover {
-    @apply bg-indigo-500 text-white scale-110 transform;
+    background-color: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
 }
