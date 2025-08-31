@@ -1,4 +1,4 @@
-/* --- GOD MODE 2.0 STYLES (CORRECTED) --- */
+/* --- GOD MODE 3.0 STYLES (CORRECTED & FINAL) --- */
 
 /* CSS Variables */
 :root {
@@ -43,40 +43,27 @@
     content: '';
     display: block;
     width: 80px;
-    /* w-20 */
     height: 4px;
-    /* h-1 */
     background-color: var(--primary-color);
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1rem;
-    /* mt-4 */
+    margin: 1rem auto 0;
     border-radius: 9999px;
-    /* rounded-full */
 }
 
 .section-title-left::after {
     content: '';
     display: block;
     width: 80px;
-    /* w-20 */
     height: 4px;
-    /* h-1 */
     background-color: var(--primary-color);
-    margin-right: auto;
-    margin-top: 1rem;
-    /* mt-4 */
+    margin: 1rem 0 0;
     border-radius: 9999px;
-    /* rounded-full */
 }
 
 /* Navigation Link Underline Effect */
 .nav-link {
     position: relative;
     color: #cbd5e1;
-    /* text-slate-300 */
     font-weight: 600;
-    /* font-semibold */
     transition: color 0.3s ease;
 }
 
@@ -89,10 +76,8 @@
     position: absolute;
     left: 0;
     bottom: -4px;
-    /* -bottom-1 */
     width: 0;
     height: 2px;
-    /* h-0.5 */
     background-color: var(--secondary-color);
     transition: width 0.3s ease;
 }
@@ -105,73 +90,66 @@
 .typed-cursor {
     color: var(--secondary-color);
     font-size: 2.25rem;
-    /* text-4xl */
 }
 
 @media (min-width: 768px) {
     .typed-cursor {
         font-size: 3.75rem;
     }
-
-    /* md:text-6xl */
 }
 
-
-/* About Me Section - Image Container */
-.about-image-container {
-    position: relative;
-    padding: 1rem;
-    /* p-4 */
+/* NEW - Skills Container & Grid */
+.skills-container {
+    background-color: rgba(15, 23, 42, 0.5);
+    /* bg-slate-900/50 */
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    /* rounded-2xl */
+    padding: 2rem;
+    /* p-8 */
+    backdrop-filter: blur(10px);
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+    background-size: 2rem 2rem;
 }
 
-.about-image-container::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-color: rgba(99, 102, 241, 0.1);
-    /* bg-indigo-500/10 */
-    border-radius: 0.5rem;
-    /* rounded-lg */
-    transform: rotate(-3deg);
-    transition: transform 0.3s ease;
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    /* gap-6 */
 }
 
-.about-image-container:hover::before {
-    transform: rotate(0deg);
+@media (min-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
-/* Skill Pills */
-.skill-pill {
-    background-color: #1e293b;
-    /* bg-slate-800 */
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    /* gap-3 */
     color: #cbd5e1;
     /* text-slate-300 */
-    font-size: 0.875rem;
-    /* text-sm */
-    font-weight: 600;
-    /* font-semibold */
-    padding: 0.5rem 1rem;
-    /* px-4 py-2 */
-    border-radius: 9999px;
-    /* rounded-full */
-    border: 1px solid #334155;
-    /* border-slate-700 */
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
 
-.skill-pill:hover {
-    background-color: var(--primary-color);
+.skill-item:hover {
     color: white;
-    border-color: var(--primary-color);
+}
+
+.skill-item i {
+    color: var(--secondary-color);
+    font-size: 1.25rem;
+    /* text-xl */
 }
 
 /* Project Card */
 .project-card {
     background-color: var(--card-bg-color);
     padding: 2rem;
-    /* p-8 */
     border-radius: 1rem;
-    /* rounded-2xl */
     display: flex;
     flex-direction: column;
     border: 1px solid var(--border-color);
@@ -187,17 +165,11 @@
 
 .tag {
     background-color: #334155;
-    /* bg-slate-700 */
     color: #a5b4fc;
-    /* text-indigo-300 */
     font-size: 0.75rem;
-    /* text-xs */
     font-weight: 600;
-    /* font-semibold */
     padding: 0.25rem 0.75rem;
-    /* px-3 py-1 */
     border-radius: 9999px;
-    /* rounded-full */
 }
 
 /* Experience Timeline */
@@ -209,16 +181,11 @@
     content: '';
     position: absolute;
     left: -54px;
-    /* Adjusted for pl-12 and border width */
     top: 8px;
-    /* mt-2 */
     width: 1.5rem;
-    /* w-6 */
     height: 1.5rem;
-    /* h-6 */
     background-color: var(--bg-color);
     border-radius: 9999px;
-    /* rounded-full */
     border-width: 4px;
     border-color: var(--primary-color);
     box-shadow: 0 0 10px var(--primary-color);
@@ -227,20 +194,14 @@
 /* Social Icons */
 .social-icon {
     width: 3rem;
-    /* w-12 */
     height: 3rem;
-    /* h-12 */
     border-radius: 9999px;
-    /* rounded-full */
     background-color: #1e293b;
-    /* bg-slate-800 */
     color: #94a3b8;
-    /* text-slate-400 */
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.25rem;
-    /* text-xl */
     transition: all 0.3s ease;
 }
 
