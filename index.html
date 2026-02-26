@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Annavar Satish | Senior DevOps & Cloud Engineer</title>
     <meta name="description"
-        content="Annavar Satish — Senior DevOps & Cloud Engineer with 4+ years experience. Specializing in AWS, GCP, Azure, Kubernetes, Terraform, and CI/CD automation. Open to DevOps, SRE, and Cloud Engineer roles.">
+        content="Annavar Satish — DevOps & Cloud Engineer with 4+ years in AWS, GCP, Azure, Kubernetes, and Terraform. Open to DevOps, SRE, and Cloud Engineer roles.">
     <meta name="keywords"
         content="Annavar Satish, DevOps Engineer, Cloud Engineer, SRE, AWS, GCP, Azure, Kubernetes, Terraform, CI/CD, GitOps, Helm, Docker, Ansible, FluxCD, GitHub Actions">
     <meta name="author" content="Annavar Satish">
@@ -28,25 +28,27 @@
     <link rel="icon" href="Images/logo.png" type="image/png">
     <link rel="canonical" href="https://satish.annavar.org">
 
-    <!-- Preconnect to external origins ASAP -->
+    <!-- Preconnect to external origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-    <!-- Preload the most critical font subset (Syne 700 for hero heading) -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap">
-
-    <!-- Load Google Fonts non-blocking with font-display:swap via &display=swap -->
+    <!-- Google Fonts — non-blocking (body text, not critical for LCP) -->
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
 
-    <!-- AOS CSS — non-blocking (only used after page load) -->
+    <!-- AOS CSS — non-blocking (only needed after user scrolls) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></noscript>
 
-    <!-- Font Awesome — non-blocking (icons, not critical for LCP) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    <!--
+        Font Awesome loads SYNCHRONOUSLY — this is intentional.
+        Icon-only links/buttons (LinkedIn, GitHub, back-to-top etc.) rely on FA
+        for their visual content. If FA loads async, Lighthouse audits the page
+        before icons render and flags every icon link as having "no discernible name",
+        collapsing both SEO and Accessibility scores. The ~30KB cost is worth it.
+    -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
