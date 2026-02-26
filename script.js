@@ -1,66 +1,178 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // --- Initialize Animate On Scroll (AOS) ---
+
+    // ---- AOS (Animate On Scroll) ----
     AOS.init({
-        duration: 800, // values from 0 to 3000, with step 50ms
-        easing: 'ease-in-out', // default easing for AOS animations
-        once: true, // whether animation should happen only once - while scrolling down
+        duration: 700,
+        easing: 'ease-out-quart',
+        once: true,
+        offset: 60,
     });
 
-    // --- Initialize Typed.js for the Hero Section Typing Effect ---
+    // ---- Typed.js ----
     new Typed('#typing-effect', {
-        strings: ['resilient cloud systems.', 'robust CI/CD pipelines.', 'scalable infrastructure.'],
-        typeSpeed: 50,
-        backSpeed: 30,
-        backDelay: 2000,
+        strings: [
+            'resilient cloud systems.',
+            'automated CI/CD pipelines.',
+            'scalable infrastructure.',
+            'zero-downtime deployments.',
+            'GitOps-driven platforms.',
+        ],
+        typeSpeed: 45,
+        backSpeed: 25,
+        backDelay: 2500,
         loop: true,
     });
 
-    // --- Mobile Menu Toggle ---
+    // ---- Sticky Header on scroll ----
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // ---- Active nav link highlight ----
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + entry.target.id) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, { threshold: 0.4, rootMargin: '-60px 0px -40% 0px' });
+    sections.forEach(s => observer.observe(s));
+
+    // ---- Mobile Menu ----
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const menuIcon = mobileMenuBtn.querySelector('i');
 
     mobileMenuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
-        if (mobileMenu.classList.contains('hidden')) {
-            menuIcon.classList.remove('fa-xmark');
-            menuIcon.classList.add('fa-bars');
-        } else {
-            menuIcon.classList.remove('fa-bars');
-            menuIcon.classList.add('fa-xmark');
-        }
+        menuIcon.classList.toggle('fa-bars');
+        menuIcon.classList.toggle('fa-xmark');
     });
 
-    // Close mobile menu when a link is clicked
-    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-    mobileMenuLinks.forEach(link => {
+    mobileMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
-            menuIcon.classList.remove('fa-xmark');
             menuIcon.classList.add('fa-bars');
+            menuIcon.classList.remove('fa-xmark');
         });
     });
 
-    // --- Back to Top Button ---
-    const backToTopButton = document.getElementById('back-to-top');
-
+    // ---- Back to Top ----
+    const backToTop = document.getElementById('back-to-top');
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTopButton.classList.remove('hidden');
-            backToTopButton.classList.add('flex');
+        if (window.scrollY > 400) {
+            backToTop.classList.add('visible');
         } else {
-            backToTopButton.classList.remove('flex');
-            backToTopButton.classList.add('hidden');
+            backToTop.classList.remove('visible');
+        }
+    });
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ---- Footer Year ----
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ---- Particle Canvas ----
+    const canvas = document.getElementById('particles-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let animFrame;
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    function createParticle() {
+        return {
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            vx: (Math.random() - 0.5) * 0.3,
+            vy: (Math.random() - 0.5) * 0.3,
+            r: Math.random() * 1.5 + 0.5,
+            alpha: Math.random() * 0.5 + 0.1,
+        };
+    }
+
+    for (let i = 0; i < 80; i++) particles.push(createParticle());
+
+    function drawParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x < 0) p.x = canvas.width;
+            if (p.x > canvas.width) p.x = 0;
+            if (p.y < 0) p.y = canvas.height;
+            if (p.y > canvas.height) p.y = 0;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(99, 218, 255, ${p.alpha})`;
+            ctx.fill();
+        });
+        // Draw connections
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 120) {
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.strokeStyle = `rgba(99, 218, 255, ${0.08 * (1 - dist / 120)})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.stroke();
+                }
+            }
+        }
+        animFrame = requestAnimationFrame(drawParticles);
+    }
+    drawParticles();
+
+    // Pause particles when tab not visible (performance)
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            cancelAnimationFrame(animFrame);
+        } else {
+            drawParticles();
         }
     });
 
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    // ---- Smooth scroll for all anchor links ----
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                const top = target.getBoundingClientRect().top + window.scrollY - 72;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }
         });
     });
 
-    // --- Set current year in footer ---
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // ---- Subtle parallax on hero ----
+    const heroContent = document.querySelector('.hero-content');
+    window.addEventListener('scroll', () => {
+        if (heroContent && window.scrollY < window.innerHeight) {
+            const offset = window.scrollY * 0.15;
+            heroContent.style.transform = `translateY(${offset}px)`;
+        }
+    });
+
 });

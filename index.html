@@ -4,303 +4,599 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Annavar Satish | DevOps Engineer</title>
+    <title>Annavar Satish | Senior DevOps & Cloud Engineer</title>
     <meta name="description"
-        content="Portfolio of Annavar Satish, a DevOps Engineer with 4+ years of experience in AWS, GCP, Azure, Kubernetes, and more.">
+        content="Annavar Satish — Senior DevOps & Cloud Engineer with 4+ years experience. Specializing in AWS, GCP, Azure, Kubernetes, Terraform, and CI/CD automation. Open to DevOps, SRE, and Cloud Engineer roles.">
     <meta name="keywords"
-        content="Annavar Satish, DevOps, Cloud Engineer, SRE, AWS, GCP, Azure, Kubernetes, Terraform, CI/CD">
-    <meta property="og:title" content="Annavar Satish | DevOps Engineer">
+        content="Annavar Satish, DevOps Engineer, Cloud Engineer, SRE, AWS, GCP, Azure, Kubernetes, Terraform, CI/CD, GitOps, Helm, Docker, Ansible, FluxCD, GitHub Actions">
+    <meta name="author" content="Annavar Satish">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Annavar Satish | Senior DevOps & Cloud Engineer">
     <meta property="og:description"
-        content="Portfolio of Annavar Satish, a DevOps Engineer with experience in AWS, GCP, Azure, Kubernetes, and more.">
+        content="4+ years building resilient cloud infrastructure, automating CI/CD pipelines, and managing Kubernetes at scale across AWS, GCP, and Azure.">
     <meta property="og:image" content="https://satish.annavar.org/Images/devops-engineers-01.png">
     <meta property="og:url" content="https://satish.annavar.org">
     <meta property="og:type" content="website">
-    <link rel="icon" href="Images/logo.png" type="image/png">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Annavar Satish | Senior DevOps & Cloud Engineer">
+    <meta name="twitter:description" content="4+ years building resilient cloud infrastructure at scale.">
+    <meta name="twitter:image" content="https://satish.annavar.org/Images/devops-engineers-01.png">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
+    <link rel="icon" href="Images/logo.png" type="image/png">
+    <link rel="canonical" href="https://satish.annavar.org">
+
+    <!-- Preload critical resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <!-- Animate On Scroll (AOS) Library -->
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Custom CSS File -->
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Annavar Satish",
+      "jobTitle": "DevOps Engineer",
+      "url": "https://satish.annavar.org",
+      "sameAs": [
+        "https://linkedin.com/in/annavar-satish-5b1a64236",
+        "https://github.com/Annavar-satish"
+      ],
+      "knowsAbout": ["AWS", "GCP", "Azure", "Kubernetes", "Terraform", "Docker", "CI/CD", "DevOps", "SRE"]
+    }
+    </script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-slate-900 text-slate-300 font-[Inter]">
+<body>
+    <!-- Particle canvas background -->
+    <canvas id="particles-canvas"></canvas>
+    <!-- Glow orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
 
-    <!-- Animated Background -->
-    <div class="background-animation"></div>
-
-    <!-- Header & Navbar -->
-    <header class="bg-slate-900/50 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-slate-700/50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-bold text-white hover:text-indigo-400 transition-colors">Annavar
-                Satish</a>
-            <ul class="hidden md:flex items-center space-x-8">
-                <li><a href="#about" class="nav-link">About & Skills</a></li>
+    <!-- Header -->
+    <header id="header">
+        <nav class="nav-container">
+            <a href="#home" class="logo">AS</a>
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <a href="#contact"
-                class="hidden md:block bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg transition-all duration-300 shadow-lg shadow-indigo-500/30 hover:bg-indigo-700 hover:scale-105 hover:transform hover:shadow-2xl hover:shadow-indigo-500/50">
-                Contact Me
+            <a href="Annavar-Satish-Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline nav-resume">
+                <i class="fa-solid fa-file-arrow-down"></i> Resume
             </a>
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-3xl z-50">
+            <button id="mobile-menu-btn" aria-label="Toggle menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </nav>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/90 backdrop-blur-lg">
-            <a href="#about" class="block py-3 px-6 text-sm hover:bg-slate-800">About & Skills</a>
-            <a href="#projects" class="block py-3 px-6 text-sm hover:bg-slate-800">Projects</a>
-            <a href="#experience" class="block py-3 px-6 text-sm hover:bg-slate-800">Experience</a>
-            <a href="#contact" class="block py-3 px-6 text-sm hover:bg-slate-800">Contact</a>
+        <div id="mobile-menu" class="mobile-menu hidden">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+            <a href="Annavar-Satish-Resume.pdf" target="_blank" class="mobile-resume">Download Resume</a>
         </div>
     </header>
 
-    <main class="container mx-auto px-6 relative z-10">
-
-        <!-- Hero Section -->
-        <section id="home" class="min-h-screen flex items-center">
-            <div class="w-full text-center md:text-left">
-                <p class="text-indigo-400 text-lg font-semibold" data-aos="fade-down">Hi, my name is</p>
-                <h1 class="text-5xl md:text-7xl font-extrabold text-white mt-2" data-aos="fade-down"
-                    data-aos-delay="200">Annavar Satish.</h1>
-                <h2 class="text-4xl md:text-6xl font-bold text-slate-400 mt-2" data-aos="fade-down"
-                    data-aos-delay="400">
-                    I build <span id="typing-effect"></span>
-                </h2>
-                <p class="mt-8 max-w-2xl mx-auto md:mx-0 text-slate-300 leading-relaxed" data-aos="fade-up"
-                    data-aos-delay="600">
-                    A DevOps Engineer with 4+ years of experience in architecting and delivering scalable
-                    infrastructure and robust CI/CD pipelines across AWS, GCP, and Azure.
-                </p>
-                <div class="mt-12" data-aos="fade-up" data-aos-delay="800">
-                    <a href="#projects"
-                        class="inline-block bg-indigo-600 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg shadow-indigo-500/30 hover:bg-indigo-700 hover:scale-105 hover:transform hover:shadow-2xl hover:shadow-indigo-500/50">View
-                        My Work</a>
+    <main>
+        <!-- ====== HERO ====== -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-badge" data-aos="fade-down">
+                    <span class="status-dot"></span>
+                    Open to new opportunities
                 </div>
+                <h1 class="hero-name" data-aos="fade-up" data-aos-delay="100">
+                    Annavar<br><span class="accent">Satish</span>
+                </h1>
+                <h2 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+                    <span id="typing-effect"></span>
+                </h2>
+                <p class="hero-desc" data-aos="fade-up" data-aos-delay="300">
+                    4+ years architecting <strong>resilient cloud infrastructure</strong> and automating deployments across 
+                    <strong>AWS, GCP & Azure</strong>. I reduce deployment times, eliminate toil, and keep systems running at 99.9%+.
+                </p>
+                <!-- Key Stats Bar -->
+                <div class="stats-bar" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat">
+                        <span class="stat-number">4+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number">40%</span>
+                        <span class="stat-label">Deployment Time Reduced</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Cloud Platforms</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Projects Delivered</span>
+                    </div>
+                </div>
+                <div class="hero-ctas" data-aos="fade-up" data-aos-delay="500">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+                </div>
+                <div class="hero-socials" data-aos="fade-up" data-aos-delay="600">
+                    <a href="https://linkedin.com/in/annavar-satish-5b1a64236" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/Annavar-satish" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="mailto:annavarsatish10@gmail.com" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual" data-aos="fade-left" data-aos-delay="300">
+                <div class="tech-globe">
+                    <div class="globe-ring ring-1"></div>
+                    <div class="globe-ring ring-2"></div>
+                    <div class="globe-ring ring-3"></div>
+                    <div class="globe-core">
+                        <i class="fa-brands fa-aws"></i>
+                    </div>
+                    <div class="orbit-icon" style="--angle:0deg; --radius:120px"><i class="fa-brands fa-docker" title="Docker"></i></div>
+                    <div class="orbit-icon" style="--angle:60deg; --radius:120px"><i class="fa-solid fa-dharmachakra" title="Kubernetes"></i></div>
+                    <div class="orbit-icon" style="--angle:120deg; --radius:120px"><i class="fa-brands fa-git-alt" title="Git"></i></div>
+                    <div class="orbit-icon" style="--angle:180deg; --radius:120px"><i class="fa-solid fa-layer-group" title="Terraform"></i></div>
+                    <div class="orbit-icon" style="--angle:240deg; --radius:120px"><i class="fa-solid fa-chart-line" title="Grafana"></i></div>
+                    <div class="orbit-icon" style="--angle:300deg; --radius:120px"><i class="fa-solid fa-terminal" title="Bash"></i></div>
+                </div>
+            </div>
+            <div class="scroll-hint">
+                <span>Scroll</span>
+                <i class="fa-solid fa-arrow-down bounce"></i>
             </div>
         </section>
 
-        <!-- About & Skills Section -->
-        <section id="about" class="py-32 scroll-mt-20">
-            <div class="grid lg:grid-cols-5 gap-16 items-center">
-                <div class="lg:col-span-2" data-aos="fade-right">
-                    <h2
-                        class="text-4xl md:text-5xl font-extrabold text-left mb-8 text-white relative tracking-tight section-title-left">
-                        About Me</h2>
-                    <p class="text-slate-300 space-y-4 leading-relaxed">
-                        With a proven ability to reduce deployment times by up to 40% through automation and GitOps
-                        principles, I am highly proficient in Kubernetes, Docker, Terraform, Ansible, and shell
-                        scripting. My expertise lies in architecting high-performance, resilient, and secure
-                        cloud-native systems.
-                    </p>
-                    <p class="mt-4 text-slate-300 leading-relaxed">
-                        I'm currently seeking a challenging role as an AWS Cloud Engineer, DevOps, or SRE where I can
-                        leverage my skills to drive continuous improvement and operational excellence.
-                    </p>
+        <!-- ====== ABOUT ====== -->
+        <section id="about" class="section">
+            <div class="section-inner">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-label">01 / About</span>
+                    <h2 class="section-title">The Engineer<br>Behind the Stack</h2>
                 </div>
-                <div class="lg:col-span-3" data-aos="fade-left" data-aos-delay="200">
-                    <div class="skills-container">
-                        <h3 class="text-2xl font-bold text-white mb-6 text-center">Core Skills & Tools</h3>
-                        <div class="skills-grid">
-                            <div class="skill-item"><i class="fa-solid fa-cloud"></i><span>AWS, GCP, Azure</span></div>
-                            <div class="skill-item"><i class="fa-solid fa-person-running"></i><span>GitHub Actions,
-                                    Drone CI, FluxCD</span></div>
-                            <div class="skill-item"><i class="fa-solid fa-layer-group"></i><span>Terraform,
-                                    Terragrunt</span></div>
-                            <div class="skill-item"><i class="fa-brands fa-docker"></i><span>Docker, Kubernetes,
-                                    Helm</span></div>
-                            <div class="skill-item"><i class="fa-solid fa-pencil"></i><span>Ansible</span></div>
-                            <div class="skill-item"><i class="fa-solid fa-chart-line"></i><span>Prometheus,
-                                    Grafana</span></div>
-                            <div class="skill-item"><i class="fa-solid fa-terminal"></i><span>Bash, Shell
-                                    Scripting</span></div>
-                            <div class="skill-item"><i class="fa-solid fa-code-branch"></i><span>Git, GitOps, SOPS,
-                                    Velero</span></div>
+                <div class="about-grid">
+                    <div class="about-text" data-aos="fade-right">
+                        <p>
+                            I'm a DevOps & Cloud Engineer who believes <strong>great infrastructure is invisible</strong> — 
+                            it just works, scales, and heals itself. Over 4+ years I've built the systems that let 
+                            development teams ship faster, sleep better, and scale confidently.
+                        </p>
+                        <p>
+                            My approach combines deep automation-first thinking with a security-conscious mindset. 
+                            Whether architecting multi-tenant Kubernetes clusters, implementing GitOps workflows, or 
+                            designing disaster recovery strategies, I focus on measurable outcomes.
+                        </p>
+                        <p>
+                            Currently at <strong>Improwised Technologies</strong>, I've reduced deployment times by 
+                            <strong>40%</strong> through intelligent pipeline automation, and I'm actively seeking 
+                            my next challenge as an AWS Cloud / DevOps / SRE engineer.
+                        </p>
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <i class="fa-solid fa-map-marker-alt"></i>
+                                <span>India · Open to Remote & Relocation</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <span>B.Sc. (MSCS) · Telangana University</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fa-solid fa-briefcase"></i>
+                                <span>Available for Full-Time Roles</span>
+                            </div>
+                        </div>
+                        <div class="about-ctas">
+                            <a href="Annavar-Satish-Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+                            </a>
+                            <a href="https://linkedin.com/in/annavar-satish-5b1a64236" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                                <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                    <div class="about-card" data-aos="fade-left" data-aos-delay="200">
+                        <div class="profile-card">
+                            <div class="profile-avatar">
+                                <i class="fa-solid fa-user-astronaut"></i>
+                            </div>
+                            <div class="profile-name">Annavar Satish</div>
+                            <div class="profile-role">DevOps / Cloud / SRE Engineer</div>
+                            <div class="profile-tags">
+                                <span class="ptag">AWS</span>
+                                <span class="ptag">GCP</span>
+                                <span class="ptag">Azure</span>
+                                <span class="ptag">Kubernetes</span>
+                                <span class="ptag">Terraform</span>
+                                <span class="ptag">GitOps</span>
+                            </div>
+                            <a href="mailto:annavarsatish10@gmail.com" class="profile-contact">
+                                <i class="fa-solid fa-envelope"></i>
+                                annavarsatish10@gmail.com
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="py-32 scroll-mt-20">
-            <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-4 text-white relative tracking-tight section-title"
-                data-aos="fade-up">Project Highlights</h2>
-            <div class="grid md:grid-cols-2 gap-8 mt-16">
-                <!-- Project Cards (No changes needed here) -->
-                <div class="project-card" data-aos="fade-up">
-                    <h3 class="text-2xl font-bold text-white mb-4">Multi-Tenant Azure Infrastructure</h3>
-                    <ul class="text-slate-400 mb-6 space-y-3 flex-grow">
-                        <li class="flex items-start"><i
-                                class="fa-solid fa-check-circle text-indigo-400 mr-3 mt-1 flex-shrink-0"></i>Deployed
-                            scalable AKS clusters with ACR & Key Vault.</li>
-                        <li class="flex items-start"><i
-                                class="fa-solid fa-check-circle text-indigo-400 mr-3 mt-1 flex-shrink-0"></i>Set up
-                            KEDA-based auto-scaling for efficient workloads.</li>
-                        <li class="flex items-start"><i
-                                class="fa-solid fa-check-circle text-indigo-400 mr-3 mt-1 flex-shrink-0"></i>Established
-                            disaster recovery protocols using Velero.</li>
-                    </ul>
-                    <div class="flex flex-wrap gap-2 mt-auto pt-4">
-                        <div class="tag">Azure</div>
-                        <div class="tag">AKS</div>
-                        <div class="tag">KEDA</div>
-                        <div class="tag">Velero</div>
+        <!-- ====== SKILLS ====== -->
+        <section id="skills" class="section section-alt">
+            <div class="section-inner">
+                <div class="section-header centered" data-aos="fade-up">
+                    <span class="section-label">02 / Skills</span>
+                    <h2 class="section-title">Tools & Technologies</h2>
+                    <p class="section-subtitle">Battle-tested across production environments at scale</p>
+                </div>
+                <div class="skills-categories" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skills-cat">
+                        <div class="skills-cat-header">
+                            <i class="fa-solid fa-cloud"></i>
+                            <h3>Cloud Platforms</h3>
+                        </div>
+                        <div class="skills-tags">
+                            <span class="skill-tag expert">AWS</span>
+                            <span class="skill-tag expert">GCP</span>
+                            <span class="skill-tag proficient">Azure</span>
+                            <span class="skill-tag expert">AKS</span>
+                            <span class="skill-tag expert">EKS</span>
+                            <span class="skill-tag proficient">GKE</span>
+                        </div>
+                    </div>
+                    <div class="skills-cat">
+                        <div class="skills-cat-header">
+                            <i class="fa-solid fa-infinity"></i>
+                            <h3>CI/CD & GitOps</h3>
+                        </div>
+                        <div class="skills-tags">
+                            <span class="skill-tag expert">GitHub Actions</span>
+                            <span class="skill-tag expert">FluxCD</span>
+                            <span class="skill-tag proficient">Drone CI</span>
+                            <span class="skill-tag proficient">CircleCI</span>
+                            <span class="skill-tag expert">GitOps</span>
+                            <span class="skill-tag expert">SOPS</span>
+                        </div>
+                    </div>
+                    <div class="skills-cat">
+                        <div class="skills-cat-header">
+                            <i class="fa-brands fa-docker"></i>
+                            <h3>Containers & Orchestration</h3>
+                        </div>
+                        <div class="skills-tags">
+                            <span class="skill-tag expert">Kubernetes</span>
+                            <span class="skill-tag expert">Docker</span>
+                            <span class="skill-tag expert">Helm</span>
+                            <span class="skill-tag proficient">K3s</span>
+                            <span class="skill-tag proficient">KEDA</span>
+                            <span class="skill-tag proficient">Velero</span>
+                        </div>
+                    </div>
+                    <div class="skills-cat">
+                        <div class="skills-cat-header">
+                            <i class="fa-solid fa-code"></i>
+                            <h3>IaC & Automation</h3>
+                        </div>
+                        <div class="skills-tags">
+                            <span class="skill-tag expert">Terraform</span>
+                            <span class="skill-tag proficient">Terragrunt</span>
+                            <span class="skill-tag proficient">Ansible</span>
+                            <span class="skill-tag expert">Bash / Shell</span>
+                            <span class="skill-tag proficient">Python</span>
+                        </div>
+                    </div>
+                    <div class="skills-cat">
+                        <div class="skills-cat-header">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <h3>Observability</h3>
+                        </div>
+                        <div class="skills-tags">
+                            <span class="skill-tag expert">Prometheus</span>
+                            <span class="skill-tag expert">Grafana</span>
+                            <span class="skill-tag proficient">CloudWatch</span>
+                            <span class="skill-tag proficient">ELK Stack</span>
+                        </div>
+                    </div>
+                    <div class="skills-cat">
+                        <div class="skills-cat-header">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <h3>Security & Storage</h3>
+                        </div>
+                        <div class="skills-tags">
+                            <span class="skill-tag proficient">AWS Key Vault</span>
+                            <span class="skill-tag proficient">ACR</span>
+                            <span class="skill-tag proficient">SOPS Secrets</span>
+                            <span class="skill-tag proficient">IAM / RBAC</span>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-2xl font-bold text-white mb-4">SaaS App K3s Cluster Upgrade</h3>
-                    <ul class="text-slate-400 mb-6 space-y-3 flex-grow">
-                        <li class="flex items-start"><i
-                                class="fa-solid fa-check-circle text-indigo-400 mr-3 mt-1 flex-shrink-0"></i>Engineered
-                            K3s cluster transition from single to multi-master.</li>
-                        <li class="flex items-start"><i
-                                class="fa-solid fa-check-circle text-indigo-400 mr-3 mt-1 flex-shrink-0"></i>Used
-                            Terraform for highly available AWS infrastructure.</li>
-                        <li class="flex items-start"><i
-                                class="fa-solid fa-check-circle text-indigo-400 mr-3 mt-1 flex-shrink-0"></i>Resolved
-                            node issues with robust CloudWatch monitoring.</li>
-                    </ul>
-                    <div class="flex flex-wrap gap-2 mt-auto pt-4">
-                        <div class="tag">AWS</div>
-                        <div class="tag">K3s</div>
-                        <div class="tag">Terraform</div>
-                        <div class="tag">CloudWatch</div>
-                    </div>
+                <div class="skills-legend" data-aos="fade-up" data-aos-delay="200">
+                    <div><span class="skill-tag expert">Expert</span> Production-proven at scale</div>
+                    <div><span class="skill-tag proficient">Proficient</span> Hands-on project experience</div>
                 </div>
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="text-2xl font-bold text-white mb-4">Cloud-Native Platform Upgrade</h3>
-                    <ul class="text-slate-400 mb-6 space-y-3 flex-grow">
-                        <li class="flex items-start"><i
-                                class="fa-solid fa-check-circle text-indigo-400 mr-3 mt-1 flex-shrink-0"></i>Upgraded a
-                            production Apache Pulsar cluster with zero downtime.</li>
-                        <li class="flex items-start"><i
-                                class="fa-solid fa-check-circle text-indigo-400 mr-3 mt-1 flex-shrink-0"></i>Managed
-                            container builds via CircleCI & Kubernetes.</li>
-                        <li class="flex items-start"><i
-                                class="fa-solid fa-check-circle text-indigo-400 mr-3 mt-1 flex-shrink-0"></i>Utilized
-                            Git rebase/cherry-pick for precise code management.</li>
-                    </ul>
-                    <div class="flex flex-wrap gap-2 mt-auto pt-4">
-                        <div class="tag">Kubernetes</div>
-                        <div class="tag">Helm</div>
-                        <div class="tag">CircleCI</div>
-                        <div class="tag">Pulsar</div>
-                    </div>
-                </div>
-                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-                    <h3 class="text-2xl font-bold text-white mb-4">E-commerce Infra Automation</h3>
-                    <ul class="text-slate-400 mb-6 space-y-3 flex-grow">
-                        <li class="flex items-start"><i
-                                class="fa-solid fa-check-circle text-indigo-400 mr-3 mt-1 flex-shrink-0"></i>Automated
-                            AWS Lightsail provisioning with Terraform CI.</li>
-                        <li class="flex items-start"><i
-                                class="fa-solid fa-check-circle text-indigo-400 mr-3 mt-1 flex-shrink-0"></i>Minimized
-                            deployment time to under 5 minutes.</li>
-                        <li class="flex items-start"><i
-                                class="fa-solid fa-check-circle text-indigo-400 mr-3 mt-1 flex-shrink-0"></i>Integrated
-                            FluxCD and GitHub Actions for GitOps workflows.</li>
-                    </ul>
-                    <div class="flex flex-wrap gap-2 mt-auto pt-4">
-                        <div class="tag">AWS</div>
-                        <div class="tag">FluxCD</div>
-                        <div class="tag">GitHub Actions</div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-20" data-aos="fade-up">
-                <a href="https://github.com/Annavar-satish" target="_blank" rel="noopener noreferrer"
-                    class="bg-indigo-600 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg shadow-indigo-500/30 hover:bg-indigo-700 hover:scale-105 hover:transform hover:shadow-2xl hover:shadow-indigo-500/50">
-                    View More on GitHub
-                </a>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="py-32 scroll-mt-20">
-            <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-4 text-white relative tracking-tight section-title"
-                data-aos="fade-up">Career & Education</h2>
-            <div class="relative max-w-3xl mx-auto border-l-2 border-indigo-500/30 pl-12 mt-16">
-                <!-- Experience Items (No changes needed here) -->
-                <div class="mb-16 experience-item" data-aos="fade-left">
-                    <h3 class="text-2xl font-bold text-white">DevOps Engineer</h3>
-                    <p class="text-indigo-400 font-semibold">Improwised Technologies Pvt Ltd | Nov 2022 - Present</p>
-                    <p class="mt-3 text-slate-300 leading-relaxed">Architected AWS/GCP infra with Terraform, built
-                        automated AKS/EKS clusters, and implemented CI/CD pipelines, reducing deployment time by 40%.
-                    </p>
-                </div>
-                <div class="mb-16 experience-item" data-aos="fade-left">
-                    <h3 class="text-2xl font-bold text-white">Associate Analyst</h3>
-                    <p class="text-indigo-400 font-semibold">GlobalLogic Pvt Ltd | Mar 2022 - Oct 2022</p>
-                    <p class="mt-3 text-slate-300 leading-relaxed">Performed data analysis, maintained process
-                        documentation, and liaised with project teams to deliver analytical insights.</p>
-                </div>
-                <div class="experience-item" data-aos="fade-left">
-                    <h3 class="text-2xl font-bold text-white">B.Sc. (MSCS)</h3>
-                    <p class="text-indigo-400 font-semibold">Nishitha Degree College, Telangana University | 2018 - 2021
-                    </p>
-                </div>
-            </div>
-            <div class="text-center mt-20" data-aos="fade-up">
-                <a href="Annavar-Satish-Resume.pdf" target="_blank" rel="noopener noreferrer"
-                    class="bg-transparent border-2 border-indigo-500 text-indigo-400 font-bold py-3 px-8 rounded-lg transition-all duration-300 hover:bg-indigo-500 hover:text-white">
-                    Download Full Resume
-                </a>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-32 scroll-mt-20 text-center">
-            <div class="max-w-2xl mx-auto">
-                <h2 class="text-4xl md:text-5xl font-extrabold text-white" data-aos="fade-up">Let's Build Something
-                    Great</h2>
-                <p class="mt-6 text-slate-300 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
-                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of an
-                    ambitious team. Feel free to reach out.
-                </p>
-                <div class="mt-12" data-aos="fade-up" data-aos-delay="200">
-                    <a href="mailto:annavarsatish10@gmail.com"
-                        class="inline-block text-xl px-10 py-4 bg-indigo-600 text-white font-bold rounded-lg transition-all duration-300 shadow-lg shadow-indigo-500/30 hover:bg-indigo-700 hover:scale-105 hover:transform hover:shadow-2xl hover:shadow-indigo-500/50">
-                        Say Hello
+        <!-- ====== PROJECTS ====== -->
+        <section id="projects" class="section">
+            <div class="section-inner">
+                <div class="section-header centered" data-aos="fade-up">
+                    <span class="section-label">03 / Projects</span>
+                    <h2 class="section-title">Project Highlights</h2>
+                    <p class="section-subtitle">Real problems. Production solutions. Measurable results.</p>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card featured" data-aos="fade-up">
+                        <div class="project-number">01</div>
+                        <div class="project-content">
+                            <h3>Multi-Tenant Azure Infrastructure</h3>
+                            <p class="project-desc">Designed and deployed a production-grade, multi-tenant AKS platform with automated scaling, full DR capability, and secrets management via Azure Key Vault.</p>
+                            <ul class="project-bullets">
+                                <li><i class="fa-solid fa-arrow-right"></i>Provisioned AKS clusters with ACR & Key Vault integration using Terraform</li>
+                                <li><i class="fa-solid fa-arrow-right"></i>Implemented KEDA-based auto-scaling, cutting idle resource cost by ~30%</li>
+                                <li><i class="fa-solid fa-arrow-right"></i>Established Velero disaster recovery with automated snapshot policies</li>
+                            </ul>
+                            <div class="project-impact">
+                                <i class="fa-solid fa-bolt"></i> ~30% cost reduction via intelligent autoscaling
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span>Azure</span><span>AKS</span><span>KEDA</span><span>Velero</span><span>Terraform</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-number">02</div>
+                        <div class="project-content">
+                            <h3>SaaS App K3s → HA Cluster Migration</h3>
+                            <p class="project-desc">Led zero-downtime migration from a single-node K3s setup to a high-availability multi-master cluster on AWS, handling the full infrastructure redesign.</p>
+                            <ul class="project-bullets">
+                                <li><i class="fa-solid fa-arrow-right"></i>Designed HA K3s topology with embedded etcd and load-balanced API server</li>
+                                <li><i class="fa-solid fa-arrow-right"></i>Provisioned entire AWS infrastructure with Terraform; fully reproducible</li>
+                                <li><i class="fa-solid fa-arrow-right"></i>Implemented CloudWatch monitoring & alerting to eliminate node blind spots</li>
+                            </ul>
+                            <div class="project-impact">
+                                <i class="fa-solid fa-bolt"></i> Zero downtime migration to HA architecture
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span>AWS</span><span>K3s</span><span>Terraform</span><span>CloudWatch</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="project-number">03</div>
+                        <div class="project-content">
+                            <h3>Apache Pulsar Zero-Downtime Upgrade</h3>
+                            <p class="project-desc">Orchestrated a complex production upgrade of an Apache Pulsar messaging cluster without service interruption, coordinating across multiple Kubernetes namespaces.</p>
+                            <ul class="project-bullets">
+                                <li><i class="fa-solid fa-arrow-right"></i>Managed rolling Helm upgrades with custom pre/post-hook validation scripts</li>
+                                <li><i class="fa-solid fa-arrow-right"></i>Automated container builds and tests via CircleCI with environment-gated promotions</li>
+                                <li><i class="fa-solid fa-arrow-right"></i>Used git rebase/cherry-pick strategy for safe, incremental code management</li>
+                            </ul>
+                            <div class="project-impact">
+                                <i class="fa-solid fa-bolt"></i> Zero downtime on mission-critical messaging upgrade
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span>Kubernetes</span><span>Helm</span><span>CircleCI</span><span>Pulsar</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-number">04</div>
+                        <div class="project-content">
+                            <h3>E-commerce GitOps Automation</h3>
+                            <p class="project-desc">Built a fully automated GitOps delivery pipeline for an e-commerce platform on AWS Lightsail, collapsing deployment time from hours to under 5 minutes.</p>
+                            <ul class="project-bullets">
+                                <li><i class="fa-solid fa-arrow-right"></i>Automated AWS Lightsail provisioning with Terraform CI — fully declarative</li>
+                                <li><i class="fa-solid fa-arrow-right"></i>Cut deployment time from ~60 min to under 5 min via FluxCD + GitHub Actions</li>
+                                <li><i class="fa-solid fa-arrow-right"></i>Implemented SOPS-encrypted secret management in GitOps workflow</li>
+                            </ul>
+                            <div class="project-impact">
+                                <i class="fa-solid fa-bolt"></i> 92% reduction in deployment time
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span>AWS</span><span>FluxCD</span><span>GitHub Actions</span><span>SOPS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="projects-cta" data-aos="fade-up">
+                    <a href="https://github.com/Annavar-satish" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                        <i class="fa-brands fa-github"></i> Explore GitHub Profile
                     </a>
                 </div>
-                <div class="flex justify-center space-x-6 mt-16" data-aos="fade-up" data-aos-delay="300">
-                    <a href="https://linkedin.com/in/annavar-satish-5b1a64236" target="_blank" rel="noopener noreferrer"
-                        class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://github.com/Annavar-satish" target="_blank" rel="noopener noreferrer"
-                        class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.instagram.com/_a.n.n.a.v.a.r/" target="_blank" rel="noopener noreferrer"
-                        class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </section>
+
+        <!-- ====== EXPERIENCE ====== -->
+        <section id="experience" class="section section-alt">
+            <div class="section-inner">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-label">04 / Experience</span>
+                    <h2 class="section-title">Career Journey</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item current" data-aos="fade-up">
+                        <div class="timeline-marker">
+                            <div class="marker-dot"></div>
+                            <div class="marker-pulse"></div>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3>DevOps Engineer</h3>
+                                    <p class="timeline-company">Improwised Technologies Pvt Ltd</p>
+                                </div>
+                                <div class="timeline-meta">
+                                    <span class="timeline-date"><i class="fa-regular fa-calendar"></i> Nov 2022 – Present</span>
+                                    <span class="badge-current">Current Role</span>
+                                </div>
+                            </div>
+                            <p class="timeline-desc">
+                                Core DevOps engineer responsible for designing and operating cloud infrastructure across AWS and GCP 
+                                for multiple production SaaS clients. Own the full lifecycle from architecture design to day-2 operations.
+                            </p>
+                            <ul class="timeline-achievements">
+                                <li><i class="fa-solid fa-trophy"></i> Reduced deployment time by <strong>40%</strong> through CI/CD automation and GitOps</li>
+                                <li><i class="fa-solid fa-trophy"></i> Architected AKS/EKS clusters serving thousands of daily users</li>
+                                <li><i class="fa-solid fa-trophy"></i> Implemented infrastructure-as-code reducing manual ops by ~60%</li>
+                                <li><i class="fa-solid fa-trophy"></i> Established DR protocols with Velero, achieving RTO &lt; 2 hours</li>
+                            </ul>
+                            <div class="timeline-tags">
+                                <span>AWS</span><span>GCP</span><span>Kubernetes</span><span>Terraform</span><span>FluxCD</span><span>GitHub Actions</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="timeline-marker">
+                            <div class="marker-dot"></div>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3>Associate Analyst</h3>
+                                    <p class="timeline-company">GlobalLogic Pvt Ltd</p>
+                                </div>
+                                <div class="timeline-meta">
+                                    <span class="timeline-date"><i class="fa-regular fa-calendar"></i> Mar 2022 – Oct 2022</span>
+                                </div>
+                            </div>
+                            <p class="timeline-desc">
+                                Performed data analysis and process documentation; collaborated with cross-functional project teams 
+                                to deliver analytical insights for technical decision-making.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="timeline-marker">
+                            <div class="marker-dot edu"></div>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3>B.Sc. (Mathematics, Statistics & Computer Science)</h3>
+                                    <p class="timeline-company">Nishitha Degree College · Telangana University</p>
+                                </div>
+                                <div class="timeline-meta">
+                                    <span class="timeline-date"><i class="fa-regular fa-calendar"></i> 2018 – 2021</span>
+                                    <span class="badge-edu"><i class="fa-solid fa-graduation-cap"></i> Education</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resume-cta" data-aos="fade-up">
+                    <a href="Annavar-Satish-Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <i class="fa-solid fa-file-arrow-down"></i> Download Full Resume
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== CONTACT ====== -->
+        <section id="contact" class="section contact-section">
+            <div class="section-inner">
+                <div class="contact-wrapper" data-aos="fade-up">
+                    <div class="contact-text">
+                        <span class="section-label">05 / Contact</span>
+                        <h2 class="section-title">Let's Build<br>Something Great</h2>
+                        <p>
+                            I'm actively looking for DevOps, Cloud, or SRE opportunities. Whether you have a role in mind, 
+                            want to discuss architecture, or just want to connect — I'd love to hear from you.
+                        </p>
+                        <div class="contact-details">
+                            <a href="mailto:annavarsatish10@gmail.com" class="contact-item">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>annavarsatish10@gmail.com</span>
+                            </a>
+                            <a href="https://linkedin.com/in/annavar-satish-5b1a64236" target="_blank" rel="noopener noreferrer" class="contact-item">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                                <span>linkedin.com/in/annavar-satish</span>
+                            </a>
+                            <a href="https://github.com/Annavar-satish" target="_blank" rel="noopener noreferrer" class="contact-item">
+                                <i class="fa-brands fa-github"></i>
+                                <span>github.com/Annavar-satish</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-action">
+                        <div class="contact-card">
+                            <div class="contact-card-icon"><i class="fa-solid fa-paper-plane"></i></div>
+                            <h3>Ready to hire or collaborate?</h3>
+                            <p>Drop me a message and I'll respond within 24 hours.</p>
+                            <a href="mailto:annavarsatish10@gmail.com" class="btn btn-primary btn-full">
+                                Send Email
+                            </a>
+                            <a href="https://linkedin.com/in/annavar-satish-5b1a64236" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-full">
+                                <i class="fa-brands fa-linkedin-in"></i> Message on LinkedIn
+                            </a>
+                            <a href="Annavar-Satish-Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-full">
+                                <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="text-center py-8 border-t border-slate-800 relative z-10">
-        <p class="text-slate-500">&copy; <span id="year"></span> Annavar Satish | DevOps Engineer</p>
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo">AS</span>
+                <p>Annavar Satish · DevOps / Cloud / SRE Engineer</p>
+            </div>
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-socials">
+                <a href="https://linkedin.com/in/annavar-satish-5b1a64236" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/Annavar-satish" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="mailto:annavarsatish10@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> Annavar Satish. Built with care.</p>
+        </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top"
-        class="fixed bottom-8 right-8 bg-indigo-500/50 text-white w-12 h-12 rounded-full hidden justify-center items-center backdrop-blur-sm hover:bg-indigo-500 transition-all duration-300 z-50">
+    <!-- Back to Top -->
+    <button id="back-to-top" aria-label="Back to top">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
-    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
