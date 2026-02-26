@@ -28,12 +28,25 @@
     <link rel="icon" href="Images/logo.png" type="image/png">
     <link rel="canonical" href="https://satish.annavar.org">
 
-    <!-- Preload critical resources -->
+    <!-- Preconnect to external origins ASAP -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Preload the most critical font subset (Syne 700 for hero heading) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap">
+
+    <!-- Load Google Fonts non-blocking with font-display:swap via &display=swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+
+    <!-- AOS CSS — non-blocking (only used after page load) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></noscript>
+
+    <!-- Font Awesome — non-blocking (icons, not critical for LCP) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
@@ -51,7 +64,27 @@
     }
     </script>
 
-    <link rel="stylesheet" href="style.css">
+    <!-- Critical CSS inlined to prevent blank render while style.css loads -->
+    <style>
+      @font-face{font-display:swap}
+      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+      html{scroll-behavior:smooth}
+      body{background:#080c14;color:#e2e8f0;font-family:'DM Sans',system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+      #particles-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.35}
+      #header{position:fixed;top:0;left:0;right:0;z-index:100;height:72px}
+      .nav-container{max-width:1200px;margin:0 auto;padding:0 2rem;height:100%;display:flex;align-items:center;gap:2rem}
+      .logo{font-weight:800;font-size:1.4rem;color:#63daff;border:2px solid #63daff;padding:4px 10px;border-radius:6px;text-decoration:none}
+      .hero{min-height:100vh;padding-top:72px;display:grid;grid-template-columns:1fr 1fr;align-items:center;max-width:1200px;margin:0 auto;padding-left:2rem;padding-right:2rem;gap:4rem;position:relative;z-index:1}
+      .hero-name{font-size:clamp(3rem,8vw,5.5rem);font-weight:800;line-height:1;letter-spacing:-3px;color:#fff;margin-bottom:1rem}
+      .hero-name .accent{color:#63daff}
+      .orb{position:fixed;border-radius:50%;pointer-events:none;z-index:0;filter:blur(80px);opacity:.12}
+      .orb-1{width:600px;height:600px;background:#63daff;top:-200px;right:-200px}
+      .orb-2{width:400px;height:400px;background:#a78bfa;bottom:20%;left:-150px}
+      .hidden{display:none!important}
+      #back-to-top{display:none}
+    </style>
+    <link rel="stylesheet" href="style.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="style.min.css"></noscript>
 </head>
 
 <body>
@@ -595,8 +628,8 @@
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+    <script src="script.min.js" defer></script>
 </body>
 </html>
