@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annavar Satish - DevOps Resume</title>
+    <style>
+        /* CORE SETTINGS */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+            -webkit-print-color-adjust: exact;
+            box-sizing: border-box;
+        }
+
+        /* HEADER */
+        .header {
+            padding: 30px 40px;
+            background-color: #fff;
+            border-bottom: 4px solid #d4a017;
+            display: flex;
+            /* Keep flex here for the header alignment */
+            align-items: center;
+        }
+
+        .header-photo {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #d4a017;
+            margin-right: 30px;
+            background-color: #f0f0f0;
+            flex-shrink: 0;
+        }
+
+        .header-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-info h1 {
+            margin: 0;
+            font-size: 36px;
+            text-transform: uppercase;
+            color: #2c3e50;
+        }
+
+        .header-info h2 {
+            margin: 5px 0 0;
+            font-size: 18px;
+            color: #d4a017;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .contact-details {
+            margin-left: auto;
+            text-align: right;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .contact-details a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* THE FIX: TABLE LAYOUT FOR PDF COLUMNS 
+           This ensures the Right Column background stretches to the bottom of Page 2 automatically.
+        */
+        .main-table {
+            display: table;
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            /* Keeps widths strict */
+        }
+
+        .left-column-cell {
+            display: table-cell;
+            width: 65%;
+            vertical-align: top;
+            padding: 30px 40px;
+            background-color: #fff;
+        }
+
+        .right-column-cell {
+            display: table-cell;
+            width: 35%;
+            vertical-align: top;
+            padding: 30px;
+            background-color: #f9f9f9;
+            /* This will now stretch fully */
+            border-left: 1px solid #e0e0e0;
+        }
+
+        /* CONTENT STYLING */
+        h3.section-title {
+            font-size: 18px;
+            color: #d4a017;
+            text-transform: uppercase;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 8px;
+            margin-top: 0;
+            /* Important for Page 2 alignment */
+            margin-bottom: 20px;
+            display: block;
+            break-after: avoid;
+            /* Keeps header with its content */
+        }
+
+        .job-block {
+            margin-bottom: 25px;
+            break-inside: avoid;
+            /* Prevents a job from being cut in half across pages */
+        }
+
+        /* Force Project Highlights to start nicely if it hits a page break */
+        .project-section {
+            margin-top: 20px;
+        }
+
+        .job-role {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .job-company {
+            font-size: 14px;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 2px;
+        }
+
+        .job-date {
+            font-size: 12px;
+            color: #888;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        li {
+            font-size: 13.5px;
+            line-height: 1.5;
+            margin-bottom: 6px;
+            color: #444;
+        }
+
+        /* SKILLS TAGS */
+        .skill-tag {
+            display: inline-block;
+            background: #fff;
+            border: 1px solid #d4a017;
+            color: #333;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 5px;
+            margin-bottom: 8px;
+        }
+
+        .edu-block,
+        .cert-block {
+            margin-bottom: 20px;
+            break-inside: avoid;
+        }
+
+        .edu-degree {
+            font-weight: bold;
+            font-size: 14px;
+            color: #2c3e50;
+        }
+
+        .edu-school {
+            font-size: 13px;
+            color: #555;
+        }
+
+        /* PRINT CLEANUP */
+        @page {
+            margin: 0;
+            size: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER (Stays at top) -->
+    <div class="header">
+        <div class="header-photo">
+            <img src="photo.jpg" alt="Profile" onerror="this.style.display='none';">
+        </div>
+        <div class="header-info">
+            <h1>Annavar Satish</h1>
+            <h2>DevOps Engineer | SRE | AWS Cloud Engineer | Cloud Architect</h2>
+        </div>
+        <div class="contact-details">
+            <div>📞 (+91) 9603724118</div>
+            <div>✉️ satishannavar@gmail.com</div>
+            <div>📍 Telangana, India | Open to Remote</div>
+            <div>🔗 <a href="https://linkedin.com/in/annavar-satish-5b1a64236">LinkedIn Profile</a></div>
+            <div>💻 <a href="https://github.com/Annavar-satish">github.com/Annavar-satish</a></div>
+            <div>🌐 <a href="https://satish.annavar.org">satish.annavar.org</a></div>
+        </div>
+    </div>
+
+    <!-- MAIN TABLE LAYOUT -->
+    <div class="main-table">
+
+        <!-- LEFT COLUMN -->
+        <div class="left-column-cell">
+
+            <h3 class="section-title">👤 Profile Summary</h3>
+            <p style="font-size: 14px; line-height: 1.6; color: #444; margin-bottom: 30px;">
+                Results-driven <strong>DevOps Engineer / Site Reliability Engineer (SRE) / AWS Cloud Engineer</strong> with <strong>4+ years</strong> of experience designing, automating, and operating production-grade infrastructure across <strong>AWS, GCP, and Azure</strong>. Expert in <strong>Kubernetes (EKS, GKE, AKS, K3s)</strong>, <strong>Infrastructure-as-Code (Terraform, Terragrunt)</strong>, and <strong>GitOps pipelines (FluxCD, Helm Charts, GitHub Actions, Drone CI, CircleCI)</strong>. Proven track record of <strong>40% reduction in deployment lead time</strong>, zero-downtime cloud migrations, and sustained <strong>ISO 27001, SOC 2, and GDPR compliance</strong> for multi-tenant SaaS platforms. Strong communicator and collaborative team player with experience in remote-first, cross-functional environments. Seeking a challenging role to architect and operate high-performance, resilient, secure, and cost-optimized cloud-native systems.
+            </p>
+
+            <h3 class="section-title">💼 Work Experience</h3>
+
+            <div class="job-block">
+                <div class="job-role">DevOps Engineer / SRE / AWS Cloud Engineer</div>
+                <div class="job-company">Improwised Technologies Pvt Ltd | Rajkot, Gujarat</div>
+                <div class="job-date">Nov 2022 – Present</div>
+                <ul>
+                    <li>Led complete migration of a multi-tenant SaaS platform from Azure to GCP, re-architecting with <strong>GKE, Cloud SQL, NATS.io</strong> pub/sub, and <strong>Neo4j Aura</strong>, improving scalability and reducing infrastructure costs.</li>
+                    <li>Architected and provisioned secure, multi-environment infrastructure on <strong>AWS, Azure, and GCP</strong> using <strong>Terraform</strong> and <strong>Terragrunt</strong> with modular, reusable IaC configurations; managed <strong>AWS profiles, IAM roles</strong>, and least-privilege access policies across multiple accounts.</li>
+                    <li>Built and maintained production <strong>Kubernetes</strong> clusters (<strong>AKS, EKS, GKE, K3s</strong>) with secure secret management via <strong>Azure Key Vault, Google Secret Manager, AWS Secrets Manager</strong>, and <strong>Mozilla SOPS</strong>; implemented <strong>KEDA</strong> for event-driven autoscaling on AWS SQS, improving resource utilization by ~30%.</li>
+                    <li>Designed and owned end-to-end <strong>CI/CD pipelines</strong> using <strong>GitHub Actions, FluxCD, Drone CI, and CircleCI</strong>; implemented full <strong>GitOps</strong> workflows with <strong>Helm Charts</strong> and <strong>FluxCD</strong>, reducing deployment lead time by <strong>40%</strong>.</li>
+                    <li>Built full-stack observability using <strong>Prometheus, Grafana, Loki, Alertmanager, Google Cloud Monitoring</strong>, and <strong>Azure Log Analytics</strong>; defined <strong>SLIs, SLOs, and error budgets</strong> to proactively track and maintain service reliability.</li>
+                    <li>Designed and tested disaster recovery procedures using <strong>Velero</strong> for Kubernetes backup and restore; maintained <strong>ISO 27001, SOC 2, and GDPR</strong> compliance across all production workloads.</li>
+                    <li>Migrated multi-tenant applications from legacy <strong>AWS</strong> environment to <strong>Azure AKS</strong> with zero customer-impacting downtime; integrated <strong>GitOps</strong> workflows using <strong>Helm</strong> and <strong>FluxCD</strong> to streamline microservices deployments.</li>
+                    <li>Managed hosted and self-hosted <strong>PostgreSQL, MySQL/MariaDB</strong>, and <strong>Neo4j</strong> databases; coordinated zero-downtime upgrades and replication setups.</li>
+                    <li>Provided <strong>24/7 on-call SRE support</strong>; authored runbooks, blameless post-mortems, and incident response playbooks to systematically reduce MTTR and eliminate repeat failures.</li>
+                    <li>Mentored junior team members on DevOps best practices, IaC standards, and CI/CD pipeline design; collaborated cross-functionally with product and client engineering teams in remote-first environment.</li>
+                </ul>
+            </div>
+
+            <div class="job-block">
+                <div class="job-role">Associate Analyst</div>
+                <div class="job-company">GlobalLogic Pvt Ltd | Hyderabad, Telangana</div>
+                <div class="job-date">Mar 2022 – Oct 2022</div>
+                <ul>
+                    <li>Performed data analysis and maintained process documentation in a cross-functional support role.</li>
+                    <li>Liaised with project teams to gather technical requirements and deliver timely analytical insights to stakeholders.</li>
+                </ul>
+            </div>
+
+            <div class="job-block">
+                <div class="job-role">DevOps Trainee</div>
+                <div class="job-company">Cloudriaze Technologies Pvt Ltd | Hyderabad, Telangana</div>
+                <div class="job-date">Jan 2022 – Mar 2022</div>
+                <ul>
+                    <li>Gained hands-on experience with core DevOps tools including Docker, Kubernetes, Git, and CI/CD pipeline configuration.</li>
+                    <li>Assisted in setting up CI/CD pipelines and participated in cloud infrastructure provisioning on AWS.</li>
+                </ul>
+            </div>
+
+            <!-- This section will now flow naturally to Page 2 if needed without alignment bugs -->
+            <div class="project-section">
+                <h3 class="section-title">📂 Project Highlights</h3>
+
+                <div class="job-block">
+                    <div class="job-role">SaaS Platform Migration: Azure → GCP (Multi-Tenant)</div>
+                    <ul>
+                        <li>Led end-to-end migration of a multi-tenant SaaS application to GCP; provisioned <strong>GKE</strong> clusters, <strong>Cloud SQL</strong>, <strong>NATS.io</strong> messaging, and <strong>Neo4j Aura</strong> graph database on a cost-effective, scalable architecture.</li>
+                        <li>Automated all infrastructure with <strong>Terraform + Terragrunt</strong>; managed deployments via a <strong>FluxCD GitOps</strong> pipeline with full Helm chart lifecycle management.</li>
+                        <li>Achieved significant cost reduction and improved horizontal scalability versus prior Azure architecture.</li>
+                    </ul>
+                </div>
+
+                <div class="job-block">
+                    <div class="job-role">Multi-Tenant Azure Kubernetes Infrastructure (SaaS)</div>
+                    <ul>
+                        <li>Provisioned and hardened <strong>Azure AKS</strong> clusters integrated with <strong>ACR, Azure Key Vault, Blob Storage</strong>, and <strong>Azure Monitor</strong>.</li>
+                        <li>Automated application deployments using <strong>FluxCD (GitOps)</strong>; configured <strong>KEDA</strong> autoscaling on AWS SQS queues to handle variable workloads efficiently.</li>
+                        <li>Secured secret management with self-hosted <strong>GitHub Actions runners</strong> and <strong>Azure Key Vault</strong> integration; established DR protocols using <strong>Velero</strong>.</li>
+                    </ul>
+                </div>
+
+                <div class="job-block">
+                    <div class="job-role">Cloud-Native Messaging Platform Upgrade – Zero Downtime</div>
+                    <ul>
+                        <li>Orchestrated a rolling zero-downtime upgrade of a production <strong>Apache Pulsar</strong> cluster from v2.7 to v2.10.</li>
+                        <li>Automated container builds and deployment stages via <strong>CircleCI</strong> and <strong>Kubernetes</strong>.</li>
+                    </ul>
+                </div>
+
+                <div class="job-block">
+                    <div class="job-role">K3s Cluster High-Availability Upgrade on AWS</div>
+                    <ul>
+                        <li>Engineered transition of a production <strong>K3s</strong> cluster from single-master to <strong>high-availability multi-master</strong> topology on AWS.</li>
+                        <li>Resolved node-termination issues caused by CPU saturation by implementing <strong>CloudWatch</strong> monitoring and alerting; documented resolution in runbooks to prevent recurrence.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="right-column-cell">
+
+            <h3 class="section-title">🚀 Key Skills</h3>
+            <div style="margin-bottom: 25px;">
+                <span class="skill-tag">AWS (EC2, VPC, S3, IAM)</span>
+                <span class="skill-tag">EKS</span>
+                <span class="skill-tag">ECR</span>
+                <span class="skill-tag">RDS</span>
+                <span class="skill-tag">Lambda</span>
+                <span class="skill-tag">SQS</span>
+                <span class="skill-tag">CloudWatch</span>
+                <span class="skill-tag">Route53</span>
+                <span class="skill-tag">ELB / ALB</span>
+                <span class="skill-tag">Secrets Manager</span>
+                <span class="skill-tag">CloudTrail</span>
+                <span class="skill-tag">Auto Scaling</span>
+                <span class="skill-tag">AWS LightSail</span>
+                <span class="skill-tag">GCP (GKE, Cloud SQL, Cloud Storage)</span>
+                <span class="skill-tag">Azure (AKS, ACR, Key Vault)</span>
+                <span class="skill-tag">Multi-Cloud Architecture</span>
+                <span class="skill-tag">Kubernetes (AKS / EKS / GKE / K3s)</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Helm</span>
+                <span class="skill-tag">Helm Charts</span>
+                <span class="skill-tag">Kustomize</span>
+                <span class="skill-tag">KEDA</span>
+                <span class="skill-tag">Velero (DR)</span>
+                <span class="skill-tag">Terraform</span>
+                <span class="skill-tag">Terragrunt</span>
+                <span class="skill-tag">Ansible</span>
+                <span class="skill-tag">AWS CloudFormation</span>
+                <span class="skill-tag">GitHub Actions</span>
+                <span class="skill-tag">FluxCD</span>
+                <span class="skill-tag">ArgoCD</span>
+                <span class="skill-tag">Drone CI</span>
+                <span class="skill-tag">CircleCI</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">GitHub</span>
+                <span class="skill-tag">GitOps</span>
+                <span class="skill-tag">Prometheus</span>
+                <span class="skill-tag">Grafana</span>
+                <span class="skill-tag">Loki</span>
+                <span class="skill-tag">Alertmanager</span>
+                <span class="skill-tag">SLO / SLI / Error Budgets</span>
+                <span class="skill-tag">Incident Response</span>
+                <span class="skill-tag">On-Call / MTTR</span>
+                <span class="skill-tag">Post-Mortems</span>
+                <span class="skill-tag">Runbooks</span>
+                <span class="skill-tag">Mozilla SOPS</span>
+                <span class="skill-tag">RBAC</span>
+                <span class="skill-tag">IAM Policies</span>
+                <span class="skill-tag">Network Policies</span>
+                <span class="skill-tag">ISO 27001</span>
+                <span class="skill-tag">SOC 2</span>
+                <span class="skill-tag">GDPR</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Bash / Shell Scripting</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">YAML</span>
+                <span class="skill-tag">PostgreSQL (Hosted/Self-Hosted)</span>
+                <span class="skill-tag">MySQL / MariaDB (Hosted/Self-Hosted)</span>
+                <span class="skill-tag">Neo4j Aura (Hosted/Self-Hosted)</span>
+                <span class="skill-tag">NATS.io</span>
+                <span class="skill-tag">Apache Pulsar</span>
+                <span class="skill-tag">Frappe / ERPNext</span>
+                <span class="skill-tag">Problem Solving</span>
+                <span class="skill-tag">Collaboration</span>
+                <span class="skill-tag">Communication</span>
+                <span class="skill-tag">Mentoring</span>
+                <span class="skill-tag">Ownership</span>
+                <span class="skill-tag">Adaptability</span>
+            </div>
+
+            <h3 class="section-title">🎓 Education</h3>
+            <div class="edu-block">
+                <div class="edu-degree">B.Sc. – Mathematics, Statistics & Computer Science</div>
+                <div class="edu-school">Nishitha Degree College</div>
+                <div class="job-date">2018 – 2021</div>
+            </div>
+            <div class="edu-block">
+                <div class="edu-degree">Intermediate (MPC)</div>
+                <div class="edu-school">Vijetha Junior College</div>
+                <div class="job-date">2016 – 2018</div>
+            </div>
+            <div class="edu-block">
+                <div class="edu-degree">SSC</div>
+                <div class="edu-school">Sai Concept School</div>
+                <div class="job-date">2015 – 2016</div>
+            </div>
+
+            <h3 class="section-title">📜 Certifications</h3>
+            <div class="cert-block">
+                <div class="edu-degree">AWS Solutions Architect – Associate</div>
+                <div class="edu-school">Amazon Web Services · Udemy</div>
+            </div>
+            <div class="cert-block">
+                <div class="edu-degree">Docker: Basic to Advanced</div>
+                <div class="edu-school">Udemy</div>
+            </div>
+            <div class="cert-block">
+                <div class="edu-degree">CKA – Certified Kubernetes Administrator</div>
+                <div class="edu-school">CNCF · In Progress</div>
+            </div>
+
+            <h3 class="section-title">🌐 Languages</h3>
+            <div class="cert-block">
+                <div class="edu-degree">English</div>
+                <div class="edu-school">Professional Proficiency</div>
+            </div>
+            <div class="cert-block">
+                <div class="edu-degree">Telugu</div>
+                <div class="edu-school">Native</div>
+            </div>
+            <div class="cert-block">
+                <div class="edu-degree">Hindi</div>
+                <div class="edu-school">Conversational</div>
+            </div>
+
+            <h3 class="section-title">🔗 Links</h3>
+            <div class="cert-block">
+                <div class="edu-degree">LinkedIn</div>
+                <div class="edu-school"><a href="https://linkedin.com/in/annavar-satish-5b1a64236">linkedin.com/in/annavar-satish</a></div>
+            </div>
+            <div class="cert-block">
+                <div class="edu-degree">GitHub</div>
+                <div class="edu-school"><a href="https://github.com/Annavar-satish">github.com/Annavar-satish</a></div>
+            </div>
+            <div class="cert-block">
+                <div class="edu-degree">Portfolio</div>
+                <div class="edu-school"><a href="https://satish.annavar.org">satish.annavar.org</a></div>
+            </div>
+
+            <!-- Spacer to ensure gray bar goes down if left side is longer -->
+            <div style="height: 100px;"></div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
